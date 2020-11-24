@@ -1,0 +1,20 @@
+<div class="article-container">
+<article>
+  <h1>
+    <%= @article.title %>
+    <small>
+      <%= link_to article_path(@article), method: :delete, data: { confirm: "Delete #{@article.title} ?" } do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+      <%= link_to edit_article_path(@article) do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </small>
+  </h1>
+    <hr>
+  <p>
+    <%= @article.content %>
+  </p>
+</article>
+<%= link_to "Go back",  root_path %>
+</div>
